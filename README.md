@@ -15,7 +15,7 @@ This project is an interactive web simulator that models SVB-style bank fragilit
 - Transparent scoring model (interpretable, prototype-focused)
 
 ## Model Notes
-This is an educational prototype inspired by themes from my SVB research. It is not a regulatory model or investment tool. Future iterations could calibrate weights using bank call report datasets and formal stress testing methodologies.
+This is an educational prototype inspired by themes from my senior thesis on the financial turbulence of the Silicon Valley Bank. It is not a regulatory model or investment tool. Future iterations could calibrate weights using bank call report datasets and formal stress testing methodologies.
 
 ## Tech Stack
 - HTML/CSS/JavaScript
