@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SVB-Inspired Bank Stress Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="container">
+    <h1>Bank Stress Simulator (SVB-Inspired)</h1>
+    <p class="sub">
+      Adjust the balance-sheet and run dynamics below to see how fast risk can compound in a high-rate environment.
+    </p>
+  </header>
+<section class="card">
+  <h2>About the Author</h2>
+  <p>
+    My name is <strong>Kayton Dean I am an undergraduate student focused on computer science
+    and system-level modeling. This simulator was built to translate my academic research during my senior year of high school on the
+    Silicon Valley Bank collapse into a computational prototype, exploring how interest-rate shocks,
+    deposit composition, and withdrawal speed can interact to produce liquidity stress.
+  </p>
+  <p>
+    This project reflects my interest in applied computer science and engineering—moving beyond
+    theoretical analysis to build interactive systems that model real-world financial risk.
+  </p>
+</section>
+
+  <main class="container grid">
+    <!-- Controls -->
+    <section class="card">
+      <h2>Inputs</h2>
+
+      <div class="control">
+        <label>
+          Interest Rate Shock (%)
+          <span class="val" id="rateShockVal"></span>
+        </label>
+        <input id="rateShock" type="range" min="0" max="6" step="0.25" value="2.0" />
+        <p class="hint">Rate hikes increase unrealized losses on longer-duration securities.</p>
+      </div>
+
+      <div class="control">
+        <label>
+          Uninsured Deposit Ratio (0–100%)
+          <span class="val" id="uninsuredVal"></span>
+        </label>
+        <input id="uninsured" type="range" min="0" max="100" step="1" value="65" />
+        <p class="hint">Higher uninsured deposits can accelerate withdrawals under stress.</p>
+      </div>
+
+      <div class="control">
+        <label>
+          Securities Duration (years)
+          <span class="val" id="durationVal"></span>
+        </label>
+        <input id="duration" type="range" min="0" max="10" step="0.5" value="6.0" />
+        <p class="hint">Higher duration means bigger price sensitivity to rate changes.</p>
+      </div>
+
+      <div class="control">
+        <label>
+          Unrealized Losses (% of capital)
+          <span class="val" id="lossesVal"></span>
+        </label>
+        <input id="losses" type="range" min="0" max="120" step="1" value="45" />
+        <p class="hint">Large unrealized losses reduce confidence and constrain liquidity options.</p>
+      </div>
+
+      <div class="control">
+        <label>
+          Withdrawal Speed Index (0–100)
+          <span class="val" id="withdrawalVal"></span>
+        </label>
+        <input id="withdrawal" type="range" min="0" max="100" step="1" value="70" />
+        <p class="hint">Digital banking + concentrated networks can make runs extremely fast.</p>
+      </div>
+
+      <div class="control">
+        <label>
+          Depositor Concentration (0–100)
+          <span class="val" id="concentrationVal"></span>
+        </label>
+        <input id="concentration" type="range" min="0" max="100" step="1" value="75" />
+        <p class="hint">More concentrated depositors can move together and amplify flight risk.</p>
+      </div>
+
+      <div class="row">
+        <button class="btn" id="presetSVB">SVB (Mar 2023)</button>
+        <button class="btn" id="presetStable">Stable Bank</button>
+        <button class="btn" id="presetRateShock">High Rate Shock</button>
+        <button class="btn" id="presetRun">Fast Digital Run</button>
+      </div>
+    </section>
+
+    <!-- Output -->
+    <section class="card">
+      <h2>Results</h2>
+
+      <div class="kpi">
+        <div>
+          <div class="kpi-label">Stress Score</div>
+          <div class="kpi-value" id="stressScore">—</div>
+        </div>
+        <div class="status" id="statusPill">—</div>
+      </div>
+
+      <div class="mini">
+        <div class="mini-card">
+          <div class="mini-label">Estimated Duration Loss (approx.)</div>
+          <div class="mini-value" id="durationLoss">—</div>
+          <div class="mini-hint">≈ duration × rate shock (very simplified).</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-label">Interpretation</div>
+          <div class="mini-text" id="interpretation">—</div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="stressChart"></canvas>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="driversChart"></canvas>
+      </div>
+
+      <details class="notes">
+        <summary>Model Notes (what this is / isn’t)</summary>
+        <ul>
+          <li>This is an educational prototype based on SVB-style dynamics (not an investment or regulatory tool).</li>
+          <li>The scoring function is a transparent weighted model to demonstrate compounding risk.</li>
+          <li>Future work: calibrate weights using bank call report datasets and stress-test scenarios.</li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+ <footer class="container foot">
+  <span>
+    © 2026 Kayton Dean · Computer Science Project ·
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  </span>
+</footer>
+
