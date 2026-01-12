@@ -1,5 +1,5 @@
 # svb-stress-simulator
-Low powered embedded system modeling Silicon Valley Bank Collapse March 2023 
+Browser based bank simulator modeling balance sheet vulnerabilities and how they compund into liquidity crises. Inspired by Silicon Valley Bank Collapse March 2023 
 # Bank Stress Simulator (SVB-Inspired)
 
 **Built by:** Kayton Dean  
