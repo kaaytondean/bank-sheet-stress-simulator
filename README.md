@@ -3,7 +3,7 @@ Browser based bank simulator modeling balance sheet vulnerabilities and how they
 # Bank Stress Simulator (Silicon Valley Bank 2023 -Inspired)
 
 **Built by:** Kayton Dean  
-**Live Demo:** [https://kaytondean.github.io/bank-sheet-stress-simulator/](https://kaaytondean.github.io/svb-stress-simulator/)  
+**Live Demo:** [https://kaytondean.github.io/bank-sheet-stress-simulator/](https://kaaytondean.github.io/bank-sheet-stress-simulator/)  
 
 ## Overview
 This project is an interactive web simulator that models SVB-style bank fragility dynamics. Users can adjust interest-rate shocks, uninsured deposit ratios, securities duration, unrealized losses, withdrawal speed, and depositor concentration to see how risk factors can compound into liquidity stress.
