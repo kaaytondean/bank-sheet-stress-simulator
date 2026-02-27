@@ -1,6 +1,6 @@
-# svb-stress-simulator
+# bank-sheet-stress-simulator
 Browser based bank simulator modeling balance sheet vulnerabilities and how they compund into liquidity crises. Inspired by Silicon Valley Bank Collapse March 2023 
-# Bank Stress Simulator (SVB-Inspired)
+# Bank Stress Simulator (Silicon Valley Bank 2023 -Inspired)
 
 **Built by:** Kayton Dean  
 **Live Demo:** [https://kaytondean.github.io/svb-stress-simulator/](https://kaaytondean.github.io/svb-stress-simulator/)  
